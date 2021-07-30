@@ -3,8 +3,10 @@ import * as express from "express";
 import { Express, NextFunction, Request, Response } from "express-serve-static-core";
 import * as http from "http";
 import APIController from '../controllers/APIController';
+import HIDController from '../controllers/HIDController';
 import Config from '../utils/Config';
 import Logger, { LogStyle } from '../utils/Logger';
+import SocketServer from "./SocketServer";
 
 export default class HTTPServer {
 
@@ -14,6 +16,7 @@ export default class HTTPServer {
 
 		this.app = <Express>express();
 		let server = http.createServer(<any>this.app);
+		SocketServer.instance.installHandler(server, {prefix:"/sock"});
 		server.listen(Config.SERVER_PORT, '0.0.0.0', null, ()=> {
 			Logger.success("Server ready on port " + Config.SERVER_PORT);
 		});
@@ -88,5 +91,6 @@ export default class HTTPServer {
 	 */
 	private async createEndpoints():Promise<void> {
 		new APIController().create(this.app);
+		new HIDController().create(this.app);
 	}
 }

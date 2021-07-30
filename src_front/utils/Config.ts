@@ -54,6 +54,15 @@ export default class Config {
 		return path;
 	}
 	
+	public static get SOCKET_PATH():string{
+		return "http://192.168.0.12:3013/sock";
+		if(this.IS_PROD) {
+			return "/sock";
+		}else{
+			return window.location.origin.replace(/(.*):[0-9]+/gi, "$1")+":"+this.SERVER_PORT+"/sock";
+		}
+	};
+	
 	
 
 	/**

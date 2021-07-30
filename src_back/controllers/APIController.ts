@@ -6,8 +6,6 @@ import { Express, Request, Response } from "express-serve-static-core";
 export default class APIController {
 
 	private _app:Express;
-	private _descriptionsCaches:{[key:string]:{[key:string]:string}} = {};
-	private static _DESCRIPTION_CACHE_INVALIDATED:boolean;
 	
 	constructor() {
 		this.initialize();
@@ -25,10 +23,6 @@ export default class APIController {
 	public create(app:Express):void {
 		this._app = app;
 		this._app.get("/api", (req:Request, res:Response) => this.getAPI(req,res));
-	}
-
-	public static invalidateDescriptionCache():void {
-		this._DESCRIPTION_CACHE_INVALIDATED = true;
 	}
 	
 	

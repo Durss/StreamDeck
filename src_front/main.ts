@@ -4,10 +4,12 @@ import { Route } from 'vue-router';
 import App from './App.vue';
 import './less/index.less';
 import router from './router';
+import SockController from './sock/SockController';
 import store from './store';
 
 Vue.config.productionTip = false;
 Config.init();
+SockController.instance.connect();
 
 router.beforeEach(async (to: Route, from: Route, next: Function) => {
 	if (!store.state.initComplete) {
