@@ -1,7 +1,13 @@
 
 # StreamDeck
 
-Custom Streamdeck
+Simple server taht captures raw keyboard inputs and broadcasts them via socket. \
+Made for my `Raspberry PI zero W`, the peripheral's namle is hardcoded [here](https://github.com/Durss/StreamDeck/blob/master/src_back/controllers/HIDController.ts). \
+Also, the binary data from my periphal may not be the same as yours, i'm using the [REiiE Mini H9+](http://www.reiie.com/product/mini/44.html) bluetooth keyboard. \
+ \
+Once server is running it provides a webpage that should log keyboard events at this url : \
+http://localhost:3013
+
 
 ## Project setup
 ```
