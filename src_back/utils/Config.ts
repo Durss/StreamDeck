@@ -34,6 +34,17 @@ export default class Config {
 		});
 	}
 
+	public static get OSC_PORT(): number {
+		return this.getEnvData({
+			dev: 5555,
+			prod: 5555,
+		});
+	}
+
+	public static get OSC_ADDRESS(): string {
+		return "192.168.0.10";
+	}
+
 
 	/**
 	 * Extract a data from an hasmap depending on the current environment.
