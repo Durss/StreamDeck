@@ -1,9 +1,14 @@
 
 # StreamDeck
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/721001/131522182-63675405-35db-46e9-aa5a-3ea909348e64.png" height="200">
+  <img src="https://user-images.githubusercontent.com/721001/131512494-eea05f05-bb1c-4182-a4ce-901dce93cdc1.png" height="200">
+</p>
+
 Simple server that captures raw keyboard inputs and broadcasts them via socket. \
-Made for my `Raspberry PI zero W`, the peripheral's name is hardcoded [here](https://github.com/Durss/StreamDeck/blob/master/src_back/controllers/HIDController.ts). \
-Also, the binary data from my periphal may not be the same as yours, i'm using the [REiiE Mini H9+](http://www.reiie.com/product/mini/44.html) bluetooth keyboard. \
+Made for my `Raspberry PI zero W`, the peripheral's name is hardcoded <a href="https://github.com/Durss/StreamDeck/blob/master/src_back/controllers/HIDController.ts" target="_blank">here</a>. \
+Also, the binary data from my periphal may not be the same as yours, i'm using the <a href="http://www.reiie.com/product/mini/44.html" target="_blank">REiiE Mini H9+</a> bluetooth keyboard. \
  \
 Once server is running it provides a webpage that should log keyboard events at this url : \
 http://localhost:3013
