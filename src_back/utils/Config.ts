@@ -7,7 +7,41 @@ export default class Config {
 
 	private static _ENV_NAME: EnvName;
 	private static _CONF_PATH: string = "env.conf";
-	
+
+	public static get SERVER_PORT(): number {
+		return 3013;
+	}
+
+	/**
+	 * Keyboard path
+	 * Get list of available devices with command :
+	 * 		ls -la /dev/input/by-id/
+	 */
+	public static get KEYBOARD_PATH(): string {
+		return "/dev/input/by-id/usb-0513_0318-event-kbd";
+	}
+
+	/**
+	 * OSC receiver server port
+	 */
+	public static get OSC_PORT(): number {
+		return 5555;
+	}
+
+	/**
+	 * OSC receiver server IP
+	 * Set the IP address of the computer receiving the events
+	 */
+	public static get OSC_ADDRESS(): string {
+		return "192.168.0.10";
+	}
+
+	public static get PUBLIC_PATH(): string {
+		return this.getEnvData({
+			dev: "./dist",
+			prod: "./public",
+		});
+	}
 
 	public static get envName(): string {
 		return this._ENV_NAME;
@@ -18,31 +52,6 @@ export default class Config {
 			dev: true,
 			prod: false,
 		});
-	}
-
-	public static get SERVER_PORT(): number {
-		return this.getEnvData({
-			dev: 3013,
-			prod: 3013,
-		});
-	}
-
-	public static get PUBLIC_PATH(): string {
-		return this.getEnvData({
-			dev: "./dist",
-			prod: "./public",
-		});
-	}
-
-	public static get OSC_PORT(): number {
-		return this.getEnvData({
-			dev: 5555,
-			prod: 5555,
-		});
-	}
-
-	public static get OSC_ADDRESS(): string {
-		return "192.168.0.10";
 	}
 
 

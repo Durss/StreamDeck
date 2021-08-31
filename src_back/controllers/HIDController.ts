@@ -51,7 +51,7 @@ export default class HIDController {
 		var HID = require('node-hid');
 		//Init keyboard listener
 		try {
-			var device = new HID.HID( "/dev/input/by-id/usb-0513_0318-event-kbd" );
+			var device = new HID.HID( Config.KEYBOARD_PATH );
 			device.on("data", (data:Buffer) => {
 				let str = data.toString('hex');
 				// console.log(str);

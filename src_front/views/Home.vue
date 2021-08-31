@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
 		<div class="message">
-			<p>App up and running</p>
+			<p>Press any key to get its code and state  bellow:</p>
 			<div>
 				<div v-for="k in keys" :key="k.keyCode">
 					<span>{{k.keyCode}} : </span>
