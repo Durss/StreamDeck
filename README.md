@@ -12,7 +12,22 @@ Also, the binary data from my periphal may not be the same as yours, i'm using t
  \
 Once server is running *(read everything bellow first)* it provides a webpage that should log keyboard events at this url : \
 `http://IP_OF_YOUR_RASPBERRY_PI:3013`
+<br >
+<br >
+<br >
 
+## Table of content
+* [Project setup](#project-setup)
+* [Project dev/build](#project-devbuild)
+  * [Compile with hot reload for development](#shortcut-for-developpement)
+  * [Compile for production](#compile-front-for-production)
+* [Starting server](#starting-services)
+* [Configuring keyboard](#configuring-keyboard)
+* [Deploy on Raspberry](#deploy-and-run-project-on-raspberry)
+
+<br >
+<br >
+<br >
 
 ## Project setup
 ```
@@ -23,6 +38,9 @@ Install PM2 globally (will run the script as a service) :
 ```
 > npm i -g pm2
 ```
+<br>
+<br>
+<br>
 
 ## Project dev/build
 
@@ -57,7 +75,9 @@ Node process has to be started manually. See [Starting services section](#starti
 ```
 > npm run build
 ``` 
-
+<br>
+<br>
+<br>
 
 ## Starting services
 Execute this inside project folder's root
@@ -69,6 +89,9 @@ To view process logs via PM2, execute :
 ```
 > pm2 logs --raw ProtopotesRaider
 ```
+<br>
+<br>
+<br>
 
 ## Start on boot (DOESN'T work on windows)
 First start the client as explained above.  
@@ -78,9 +101,11 @@ Then execute these commands:
 > pm2 startup
 ```
 Now, the service should automatically start on boot 
+<br>
+<br>
+<br>
 
-
-## Keyboard config
+## Configuring Keyboard
 The keyboard's name and path is configured [there](https://github.com/Durss/StreamDeck/blob/master/src_back/utils/Config.ts#L21). \
 Yours might be different. Plug your keyboard an list the available devices with this command :
 ```
@@ -92,8 +117,11 @@ Not sure it's necessary but you may want to give access to that device to the us
 > sudo setfacl -m u:pi:r /dev/input/by-id/usb-0513_0318-event-kbd
 ```
 *(replace the device's name by yours)*
+<br>
+<br>
+<br>
 
-## Deploy to Raspberry and run project
+## Deploy and run project on Raspberry
 Build the project via :
 ```
 > npm run build
