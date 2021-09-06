@@ -6,8 +6,8 @@
   <img src="https://user-images.githubusercontent.com/721001/131512494-eea05f05-bb1c-4182-a4ce-901dce93cdc1.png" height="200">
 </p>
 
-Simple server that captures raw keyboard inputs and broadcasts them via socket. \
-Made for my `Raspberry PI zero W`, the peripheral's name is configured here <a href="https://github.com/Durss/StreamDeck/blob/master/src_back/utils/Config.ts#L21" target="_blank">here</a>. \
+Simple server that captures raw keyboard inputs and broadcasts them via socket and OSC. \
+Made for my `Raspberry PI zero W`, the peripheral's name is configured <a href="https://github.com/Durss/StreamDeck/blob/master/src_back/utils/Config.ts#L21" target="_blank">here</a>. \
 Also, the binary data from my periphal may not be the same as yours, i'm using the <a href="http://www.reiie.com/product/mini/44.html" target="_blank">REiiE Mini H9+</a> bluetooth keyboard. \
  \
 Once server is running *(read everything bellow first)* it provides a webpage that should log keyboard events at this url : \
