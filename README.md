@@ -87,7 +87,7 @@ Execute this inside project folder's root
 
 To view process logs via PM2, execute :
 ```
-> pm2 logs --raw ProtopotesRaider
+> pm2 logs --raw StreamDeck
 ```
 <br>
 <br>
